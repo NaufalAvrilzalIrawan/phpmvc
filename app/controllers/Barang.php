@@ -35,6 +35,22 @@ class Barang extends Controller {
         }
     }
 
+
+    public function ubah() {
+
+        if( $this->model('Barang_model')->ubahDataBarang($_POST) > 0) {
+            Flasher::setFlash('berhasil', 'diubah', 'success');
+            header('Location: ' . BASEURL . '/barang');
+            exit;
+        }
+        else {
+            Flasher::setFlash('gagal', 'diubah', 'danger');
+            header('Location: ' . BASEURL . '/barang');
+            exit;
+        }
+    }
+
+
     public function hapus($id) {
 
         if( $this->model('Barang_model')->hapusDataBarang($id) > 0) {
@@ -47,6 +63,12 @@ class Barang extends Controller {
             header('Location: ' . BASEURL . '/barang');
             exit;
         }
+    }
+
+
+    public function getUbah() {
+
+        echo json_encode($this->model('Barang_model')->getBarangById($_POST['id']));
     }
 
 }

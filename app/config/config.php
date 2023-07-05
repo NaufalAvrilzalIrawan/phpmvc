@@ -1,7 +1,7 @@
 <?php
 
 //path public
-define('BASEURL', 'http://localhost/XI_PPLG_1/phpmvc/phpmvc/public');
+define('BASEURL', 'http://localhost/PKL/phpmvc/public');
 
 //DB
 define('DB_HOST', 'localhost');

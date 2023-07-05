@@ -6,7 +6,7 @@
         </div>
     </div>
 
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#TambahModal">
+    <button type="button" class="btn btn-primary tombolTambahData" data-bs-toggle="modal" data-bs-target="#TambahModal">
         Tambah Barang
     </button>
     <br><br>
@@ -19,6 +19,7 @@
                 <li class="list-group-item">
                     <?= $barang['Nama_Barang'] ?>
                     <a href="<?= BASEURL; ?>/barang/hapus/<?= $barang['ID']?>" class="badge bg-danger float-end ms-1" onclick="return confirm('Tru kah?')">hapus</a>
+                    <a href="<?= BASEURL; ?>/barang/ubah/<?= $barang['ID']?>" class="badge bg-success float-end ms-1 tampilModalUbah" data-bs-toggle="modal" data-bs-target="#TambahModal" data-id="<?= $barang['ID'];?>">Ubah</a>
                     <a href="<?= BASEURL; ?>/barang/detail/<?= $barang['ID']?>" class="badge bg-primary float-end ms-1">detail</a>
                 </li>
 
@@ -36,11 +37,13 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Tambah Barang</h1>
+        <h1 class="modal-title fs-5" id="modalLabel">Tambah Barang</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
+
         <form action="<?= BASEURL; ?>/barang/tambah" method="post">
+            <input type="hidden" name="id" id="id"></input>
             <div class="mb-3">
                 <label for="nama" class="form-label">Nama Barang</label>
                 <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan Nama Barang">
@@ -50,7 +53,7 @@
                 <select class="form-select" aria-label="Default select example" id="kate" name="kate">
                     <option selected>Pilih Kategori</option>
                     <option value="Elektronik">Elektronik</option>
-                    <option value="Alat Rumah Tangga">Alat Rumah Tangga</option>
+                    <option value="ART">Alat Rumah Tangga</option>
                     <option value="Lainnya">Lainnya</option>
                 </select>
             </div>  
