@@ -71,4 +71,16 @@ class Barang extends Controller {
         echo json_encode($this->model('Barang_model')->getBarangById($_POST['id']));
     }
 
+
+    public function cari() {
+
+        $data['judul'] = __CLASS__;
+        $data['maker'] = 'Iwadmin';
+        $data['barangs'] = $this->model('Barang_model')->cariDataBarang();
+        
+        $this->view('templates/header', $data);
+        $this->view('barang/index', $data);
+        $this->view('templates/footer', $data);
+    }
+
 }

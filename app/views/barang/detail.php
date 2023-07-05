@@ -7,6 +7,6 @@
 
         <h4 class="lead"><b>Kategori : </b><?= $data['barangs']['Kat_Barang'] ?></h4>
         <h4 class="lead"><b>Harga : </b> RP. <?= $data['barangs']['Harga_Barang'] ?></h4>
-        <a href="<?= BASEURL; ?>/about/page"><button type="button" class="btn btn-outline-success">Selengkapnya</button></a>
+        <a href="<?= BASEURL; ?>/barang"><button type="button" class="btn btn-outline-warning">Kembali</button></a>
     </div>
 </div>

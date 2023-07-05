@@ -6,10 +6,24 @@
         </div>
     </div>
 
-    <button type="button" class="btn btn-primary tombolTambahData" data-bs-toggle="modal" data-bs-target="#TambahModal">
-        Tambah Barang
-    </button>
-    <br><br>
+    <div class="row mb-3">
+        <div class="col-lg-6">
+            <button type="button" class="btn btn-primary tombolTambahData" data-bs-toggle="modal" data-bs-target="#TambahModal">
+                Tambah Barang
+            </button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-6">
+            <form action="<?= BASEURL; ?>/barang/cari" method="post">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Cari..." name="keyword" id="keyword" autocomplete="off">
+                <button class="btn btn-primary" type="submit" id="tombolCari">Cari</button>
+            </div>
+            </form>
+        </div>
+    </div>
 
     <div class="row">
         <h3>Daftar Barang</h3>
